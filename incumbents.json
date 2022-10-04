@@ -1,0 +1,99 @@
+{
+  "senate": {
+    "AL": [{ "party": "republican" }],
+    "AK": [{ "party": "republican" }],
+    "AZ": [{ "party": "democrat" }],
+    "AR": [{ "party": "republican" }],
+    "CA": [{ "party": "democrat" }],
+    "CO": [{ "party": "democrat" }],
+    "CT": [{ "party": "democrat" }],
+    "DE": [{ "party": "democrat" }],
+    "FL": [{ "party": "republican" }],
+    "GA": [{ "party": "democrat" }],
+    "HI": [{ "party": "democrat" }],
+    "ID": [{ "party": "republican" }],
+    "IL": [{ "party": "democrat" }],
+    "IN": [{ "party": "republican" }],
+    "IA": [{ "party": "republican" }],
+    "KS": [{ "party": "republican" }],
+    "KY": [{ "party": "republican" }],
+    "LA": [{ "party": "republican" }],
+    "ME": [
+      { "party": "republican" },
+      { "party": "democrat" }
+    ],
+    "MD": [{ "party": "democrat" }],
+    "MA": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "MI": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "MN": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "MS": [{ "party": "republican" }],
+    "MO": [{ "party": "republican" }],
+    "MT": [
+      { "party": "republican" },
+      { "party": "democrat" }
+    ],
+    "NE": [{ "party": "republican" }],
+    "NV": [{ "party": "democrat" }],
+    "NH": [{ "party": "democrat" }],
+    "NJ": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "NM": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "NY": [{ "party": "democrat" }],
+    "NC": [{ "party": "republican" }],
+    "ND": [{ "party": "republican" }],
+    "OH": [{ "party": "democrat" }],
+    "OR": [{ "party": "democrat" }],
+    "PA": [{ "party": "democrat" }],
+    "RI": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
+    "SC": [{ "party": "republican" }],
+    "SD": [{ "party": "republican" }],
+    "TN": [{ "party": "republican" }],
+    "TX": [{ "party": "republican" }],
+    "UT": [{ "party": "republican" }],
+    "VT": [{ "party": "democrat" }],
+    "VA": [{ "party": "democrat" }],
+    "WA": [{ "party": "democrat" }],
+    "WV": [
+      { "party": "republican" },
+      { "party": "democrat" }
+    ],
+    "WI": [{ "party": "democrat" }],
+    "WY": [
+      { "party": "republican" },
+      { "party": "republican" }
+    ]
+  },
+  "governors": {
+    "WA": [{ "party": "democrat" }],
+    "DE": [{ "party": "democrat" }],
+    "UT": [{ "party": "republican" }],
+    "MT": [{ "party": "republican" }],
+    "ND": [{ "party": "republican" }],
+    "MO": [{ "party": "republican" }],
+    "LA": [{ "party": "democrat" }],
+    "MS": [{ "party": "republican" }],
+    "IN": [{ "party": "republican" }],
+    "KY": [{ "party": "democrat" }],
+    "WV": [{ "party": "republican" }],
+    "VA": [{ "party": "republican" }],
+    "NJ": [{ "party": "democrat" }],
+    "NC": [{ "party": "democrat" }]
+  }
+}
