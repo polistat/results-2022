@@ -80,7 +80,7 @@
       { "party": "republican" }
     ]
   },
-  "governors": {
+  "governor": {
     "WA": [{ "party": "democrat" }],
     "DE": [{ "party": "democrat" }],
     "UT": [{ "party": "republican" }],
