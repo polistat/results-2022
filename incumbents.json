@@ -7,7 +7,10 @@
     "CA": [{ "party": "democrat" }],
     "CO": [{ "party": "democrat" }],
     "CT": [{ "party": "democrat" }],
-    "DE": [{ "party": "democrat" }],
+    "DE": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
     "FL": [{ "party": "republican" }],
     "GA": [{ "party": "democrat" }],
     "HI": [{ "party": "democrat" }],
@@ -35,13 +38,19 @@
       { "party": "democrat" },
       { "party": "democrat" }
     ],
-    "MS": [{ "party": "republican" }],
+    "MS": [
+      { "party": "republican" },
+      { "party": "republican" }
+    ],
     "MO": [{ "party": "republican" }],
     "MT": [
       { "party": "republican" },
       { "party": "democrat" }
     ],
-    "NE": [{ "party": "republican" }],
+    "NE": [
+      { "party": "republican" },
+      { "party": "republican" }
+    ],
     "NV": [{ "party": "democrat" }],
     "NH": [{ "party": "democrat" }],
     "NJ": [
@@ -64,11 +73,20 @@
     ],
     "SC": [{ "party": "republican" }],
     "SD": [{ "party": "republican" }],
-    "TN": [{ "party": "republican" }],
-    "TX": [{ "party": "republican" }],
+    "TN": [
+      { "party": "republican" },
+      { "party": "republican" }
+    ],
+    "TX": [
+      { "party": "republican" },
+      { "party": "republican" }
+    ],
     "UT": [{ "party": "republican" }],
     "VT": [{ "party": "democrat" }],
-    "VA": [{ "party": "democrat" }],
+    "VA": [
+      { "party": "democrat" },
+      { "party": "democrat" }
+    ],
     "WA": [{ "party": "democrat" }],
     "WV": [
       { "party": "republican" },
