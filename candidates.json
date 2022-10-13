@@ -73,7 +73,7 @@
       { "party": "republican", "name": "Chris Chaffee" }
     ],
     "LA": [
-      { "party": "democrat", "name": "Gary Chambers" },
+      { "party": "democrat", "name": "A Democrat" },
       { "party": "republican", "name": "John Kennedy" }
     ],
     "KY": [
@@ -137,8 +137,8 @@
       { "party": "republican", "name": "Katie Britt" }
     ],
     "AK": [
-      { "party": "democrat", "name": "Patricia R. Chesbro" },
-      { "party": "republican", "name": "Lisa Murkowski" }
+      { "party": "democrat", "name": "Lisa Murkowski" },
+      { "party": "republican", "name": "Kelly Tshibaka" }
     ]
   },
   "governor": {
