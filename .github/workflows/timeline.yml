@@ -1,0 +1,25 @@
+name: Get timeline
+
+on:
+  schedule:
+    - cron: '30 1,13 * * *'
+  workflow_dispatch:
+
+jobs:
+  timeline:
+    name: Fetch timeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: wget "https://polistat.mbhs.edu/api/timeline?secret=$secret" -O timeline.json
+        env:
+          secret: ${{ secrets.TIMELINE_SECRET }}
+
+      - name: Push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Semi-daily timeline" || true
+          git push
