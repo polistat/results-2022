@@ -1,0 +1,74 @@
+name: Run model
+
+on:
+  schedule:
+    - cron: '30 0,12 * * *'
+  workflow_dispatch:
+
+jobs:
+  model:
+    name: Model run
+    runs-on: ubuntu-latest
+
+    steps:
+      # setup
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: git clone https://github.com/polistat/backend-2022 /tmp/backend
+      - uses: r-lib/actions/setup-r@v2
+      - run: mv /tmp/backend/DESCRIPTION .
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            any::tidyverse
+            any::lubridate
+            any::incidence
+            any::stringr
+            any::modelr
+
+      # R
+      - name: Configure R code
+        run: |
+          sed -i 's/"~\/R Stuff\/PoliStat\/Polls\/", polls_downloaded_date/"\/tmp\/polls"/g' /tmp/backend/For_API.R
+          sed -i 's/"~\/R Stuff\/PoliStat\/polls\/", polls_downloaded_date/"\/tmp\/polls"/g' /tmp/backend/For_API.R
+          sed -i 's/~\/R Stuff\/PoliStat\/Class Model\/Weighted_polls/\/tmp\/weighted_polls/g' /tmp/backend/For_API.R
+          sed -i 's/~\/R Stuff\/PoliStat\/Class Model\/For Simulation/\/tmp\/outputs/g' /tmp/backend/For_API.R
+          sed -i 's/~\/R Stuff\/PoliStat\/Class Model/\/tmp\/backend\/Class Model/g' /tmp/backend/For_API.R
+          sed -i "s/start_day <- \"10\/13\/2022\"/start_day <- \"$(date +'%m\/%d\/%Y')\"/" /tmp/backend/For_API.R
+          mkdir /tmp/outputs
+          mkdir /tmp/outputs/National_Mood
+          mkdir /tmp/weighted_polls
+          mkdir /tmp/polls
+          sudo timedatectl set-timezone "US/Eastern"
+          cat /tmp/backend/For_API.R
+
+      - name: Fetch polls
+        run: |
+          wget https://projects.fivethirtyeight.com/polls/data/generic_ballot_polls.csv -O /tmp/polls/generic_ballot_polls.csv
+          wget https://projects.fivethirtyeight.com/polls/data/governor_polls.csv -O /tmp/polls/governor_polls.csv
+          wget https://projects.fivethirtyeight.com/polls/data/senate_polls.csv -O /tmp/polls/senate_polls.csv
+
+      - run: Rscript /tmp/backend/For_API.R
+
+      # Python
+      - name: Configure Python code
+        run: |
+          sed -i 's/~\/R Stuff\/PoliStat\/Class Model\/For Simulation/\/tmp\/outputs/g' /tmp/backend/main.py
+          sed -i 's/~\/Documents\/polistat-results-2022/./g' /tmp/backend/main.py
+          sed -i 's/demographics z-scores.csv/\/tmp\/backend\/Class Model\/demographics z-scores.csv/' /tmp/backend/main.py
+          python --version
+          python -m pip install -U pip wheel setuptools
+          python -m pip install numpy pandas numba scipy
+          cat /tmp/backend/main.py
+
+      - run: python /tmp/backend/main.py
+
+      - name: Push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Semi-daily run" || true
+          git push
