@@ -65,6 +65,12 @@ jobs:
 
       - run: python /tmp/backend/main.py
 
+      # Copy polls
+      - name: Save polls
+        run: |
+          cp /tmp/polls/governor_polls.csv "./latest-polls/governor/$(date +'%m-%d-%Y').csv"
+          cp /tmp/polls/senate_polls.csv "./latest-polls/senate/$(date +'%m-%d-%Y').csv"
+
       - name: Push changes
         run: |
           git config user.name github-actions
