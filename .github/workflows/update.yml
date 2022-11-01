@@ -68,6 +68,7 @@ jobs:
       # Copy polls
       - name: Save polls
         run: |
+          sed -i '/^78283/d' /tmp/polls/senate_polls.csv
           cp /tmp/polls/governor_polls.csv "./latest-polls/governor/$(date +'%Y-%m-%d').csv"
           cp /tmp/polls/senate_polls.csv "./latest-polls/senate/$(date +'%Y-%m-%d').csv"
 
